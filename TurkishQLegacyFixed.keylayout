@@ -91,6 +91,7 @@
 			<key code="92" output="9"/>
 			<key code="93" output="§"/>
 			<key code="94" output="`"/>
+			<key code="117" output=""/>
 		</keyMap>
 		<!-- Index 1: Shift -->
 		<keyMap index="1">
@@ -120,7 +121,7 @@
 			<key code="23" output="%"/>
 			<key code="24" output="+"/>
 			<key code="25" output="("/>
-			<key code="26" output="&#x0026;"/>
+			<key code="26" output="&amp;"/>
 			<key code="27" output="_"/>
 			<key code="28" output="*"/>
 			<key code="29" output=")"/>
@@ -132,15 +133,15 @@
 			<key code="35" output="P"/>
 			<key code="37" output="L"/>
 			<key code="38" output="J"/>
-			<key code="39" output="&#x0022;"/>
+			<key code="39" output="&quot;"/>
 			<key code="40" output="K"/>
 			<key code="41" output=":"/>
 			<key code="42" output="|"/>
-			<key code="43" output="&#x003C;"/>
+			<key code="43" output="&lt;"/>
 			<key code="44" output="?"/>
 			<key code="45" output="N"/>
 			<key code="46" output="M"/>
-			<key code="47" output="&#x003E;"/>
+			<key code="47" output="&gt;"/>
 			<key code="49" output=" "/>
 			<key code="50" output="~"/>
 			<key code="65" output="."/>
@@ -165,27 +166,11 @@
 			<key code="92" output="9"/>
 			<key code="93" output="|"/>
 			<key code="94" output="~"/>
+			<key code="117" output=""/>
 		</keyMap>
-		<!-- Index 2: Control - FIX: use unshifted values -->
+		<!-- Index 2: Control -->
 		<keyMap index="2">
-			<key code="0" output="a"/>
-			<key code="1" output="s"/>
-			<key code="2" output="d"/>
-			<key code="3" output="f"/>
-			<key code="4" output="h"/>
-			<key code="5" output="g"/>
-			<key code="6" output="z"/>
-			<key code="7" output="x"/>
-			<key code="8" output="c"/>
-			<key code="9" output="v"/>
 			<key code="10" output="§"/>
-			<key code="11" output="b"/>
-			<key code="12" output="q"/>
-			<key code="13" output="w"/>
-			<key code="14" output="e"/>
-			<key code="15" output="r"/>
-			<key code="16" output="y"/>
-			<key code="17" output="t"/>
 			<key code="18" output="1"/>
 			<key code="19" output="2"/>
 			<key code="20" output="3"/>
@@ -195,25 +180,12 @@
 			<key code="24" output="="/>
 			<key code="25" output="9"/>
 			<key code="26" output="7"/>
-			<key code="27" output="-"/>
 			<key code="28" output="8"/>
 			<key code="29" output="0"/>
-			<key code="30" output="]"/>
-			<key code="31" output="o"/>
-			<key code="32" output="u"/>
-			<key code="33" output="["/>
-			<key code="34" output="i"/>
-			<key code="35" output="p"/>
-			<key code="37" output="l"/>
-			<key code="38" output="j"/>
 			<key code="39" output="'"/>
-			<key code="40" output="k"/>
 			<key code="41" output=";"/>
-			<key code="42" output="\"/>
 			<key code="43" output=","/>
 			<key code="44" output="/"/>
-			<key code="45" output="n"/>
-			<key code="46" output="m"/>
 			<key code="47" output="."/>
 			<key code="49" output=" "/>
 			<key code="50" output="`"/>
@@ -233,8 +205,8 @@
 			<key code="89" output="7"/>
 			<key code="91" output="8"/>
 			<key code="92" output="9"/>
-			<key code="93" output="§"/>
 			<key code="94" output="`"/>
+			<key code="117" output=""/>
 		</keyMap>
 		<!-- Index 3: Option -->
 		<keyMap index="3">
@@ -303,6 +275,7 @@
 			<key code="91" output="8"/>
 			<key code="92" output="9"/>
 			<key code="94" output="`"/>
+			<key code="117" output=""/>
 		</keyMap>
 		<!-- Index 4: Option+Shift -->
 		<keyMap index="4">
@@ -375,6 +348,7 @@
 			<key code="91" output="8"/>
 			<key code="92" output="9"/>
 			<key code="94" output="Ÿ"/>
+			<key code="117" output=""/>
 		</keyMap>
 	</keyMapSet>
 </keyboard>
