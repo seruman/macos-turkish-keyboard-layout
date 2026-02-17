@@ -22,9 +22,3 @@ jobs:
             echo "Run 'swift tools/generate-layout.swift' and commit the result."
             exit 1
           fi
-
-      - name: Upload layout artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: TurkishQLegacyFixed.keylayout
-          path: TurkishQLegacyFixed.keylayout
