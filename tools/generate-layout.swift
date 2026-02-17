@@ -56,7 +56,7 @@ func generateLayout(from layout: TISInputSource) -> String {
             UInt32(LMGetKbdType()), UInt32(kUCKeyTranslateNoDeadKeysMask),
             &deadKeyState, chars.count, &actualLength, &chars
         )
-        if status == noErr && actualLength > 0 && chars[0] >= 32 {
+        if status == noErr && actualLength > 0 && chars[0] >= 32 && chars[0] != 127 {
             return chars[0]
         }
         return nil
@@ -68,17 +68,13 @@ func generateLayout(from layout: TISInputSource) -> String {
     for keyCode: UInt16 in 0..<128 {
         for (idx, modState) in modifierStates.enumerated() {
             if let ch = getChar(keyCode, modState) {
-                // FIX: For ctrl (index 2), use unshifted value (index 0) instead
-                if idx == 2 {
-                    if let unshifted = getChar(keyCode, modifierStates[0]) {
-                        keyMaps[idx][keyCode] = unshifted
-                    }
-                } else {
-                    keyMaps[idx][keyCode] = ch
-                }
+                keyMaps[idx][keyCode] = ch
             }
         }
     }
+
+    // FIX: Control (index 2) should use unshifted values (index 0)
+    keyMaps[2] = keyMaps[0]
 
     // Generate XML
     var xml = """
