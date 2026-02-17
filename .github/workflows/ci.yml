@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate layout
+        run: swift tools/generate-layout.swift
+
+      - name: Check layout matches committed
+        run: |
+          if ! git diff --exit-code TurkishQLegacyFixed.keylayout; then
+            echo "Generated layout differs from committed file!"
+            echo "Run 'swift tools/generate-layout.swift' and commit the result."
+            exit 1
+          fi
+
+      - name: Upload layout artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TurkishQLegacyFixed.keylayout
+          path: TurkishQLegacyFixed.keylayout
