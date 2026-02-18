@@ -16,15 +16,21 @@ This breaks keyboard shortcuts in terminal emulators (Ghostty, WezTerm) and any 
 
 The bug is in Apple's compiled keyboard layout data (`AppleKeyboardLayouts-L.dat`), not in individual applications. See [docs/turkish-layout-bug.md](docs/turkish-layout-bug.md) for technical details.
 
-## Installation
+## Generate + Validate + Install
 
 ```bash
-# Copy layout
+# 1) Generate from the currently installed Apple layout
+swift tools/generate-layout.swift
+
+# 2) Install to user layouts (home)
 mkdir -p "$HOME/Library/Keyboard Layouts"
-cp TurkishQLegacyFixed.keylayout "$HOME/Library/Keyboard Layouts/"
+cp TurkishQLegacyFixed.keylayout "$HOME/Library/Keyboard Layouts/TurkishQLegacyFixed.keylayout"
 
-# Enable without logout
-swift install-layout.swift "Turkish Q Legacy (Fixed)"
+# 3) Validate behavior against built-in Turkish Q – Legacy
+swift tools/validate-layout.swift
+
+# 4) Add it in System Settings
+# System Settings → Keyboard → Input Sources → Edit → +
+# Then select: Turkish Q – Legacy (Fixed)
+# If it does not show immediately, log out/in IDK.
 ```
-
-The layout appears in System Settings > Keyboard > Input Sources as "Turkish Q Legacy (Fixed)".
